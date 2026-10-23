@@ -1,0 +1,32 @@
+
+# Student Grade Calculator
+
+n = int(input("Enter number of subjects: "))
+total = 0
+
+for i in range(1, n + 1):
+    marks = float(input(f"Enter marks for subject {i} (out of 100): "))
+    if marks < 0 or marks > 100:
+        print("Invalid marks! Enter marks between 0 and 100.")
+        exit()
+    total += marks
+
+percentage = total / n
+
+if percentage >= 90:
+    grade = "A+"
+elif percentage >= 80:
+    grade = "A"
+elif percentage >= 70:
+    grade = "B"
+elif percentage >= 60:
+    grade = "C"
+elif percentage >= 50:
+    grade = "D"
+else:
+    grade = "F"
+
+print("\n--- Student Result ---")
+print("Total Marks:", total, "/", n * 100)
+print("Percentage:", round(percentage, 2), "%")
+print("Grade:", grade)
